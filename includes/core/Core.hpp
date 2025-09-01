@@ -12,6 +12,6 @@ enum class RELATIVE_POSITION {
     DESTINATION
 };
 
-bool xor(bool x, bool y) {
+bool customXor(bool x, bool y) {
     return x ^ y;
 }

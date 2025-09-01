@@ -1,0 +1,20 @@
+# Dossiers de build
+/build/
+/_build/
+/CMakeFiles/
+
+# Fichiers générés par CMake
+/CMakeCache.txt
+/*.cmake
+/*.make
+/*.ninja
+
+# Exécutables
+*.exe
+
+# Visual Studio / VS Code
+.vscode/
+*.user
+*.suo
+*.ipch
+*.pdb

@@ -5,6 +5,7 @@
 #include "includes/core/Geometry/Point.hpp"
 #include "includes/core/Geometry/GeoUtils.hpp"
 #include "includes/core/Geometry/line.hpp"
+#include "includes/core/Geometry/intersection.hpp"
 #include "includes/operations/Vector.hpp"
 
 int main() {
@@ -119,4 +120,12 @@ int main() {
     Line l(p4, p5);
     std::cout << "Line L : " << l.getDirection().X() << std::endl;    
     std::cout << "Line L : " << l.getDirection().Y() << std::endl;    
+
+    Point2D p7(1.0, 2.0);
+    Point2D p8(12.0, 9.0);
+    Point2D p9(2.0, 8.0);
+    Point2D p10(9.0, 3.0);
+
+    Point2D intersect = intersection(p7, p8, p9, p10);
+    std::cout << "[" << intersect.x << "," << intersect.y << "]" << '\n';
 }

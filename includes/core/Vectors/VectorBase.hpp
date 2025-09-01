@@ -103,23 +103,18 @@ class VectorBase {
             return VectorBase<TYPE, SIZE>(tmp_data_div);
         }
 
-        template<typename otherType>
-        VectorBase operator+(const VectorBase<otherType, SIZE>& other) const {
-            static_assert(std::is_arithmetic_v<otherType> == true);
+        VectorBase operator+(const VectorBase<TYPE, SIZE>& other) const {
 
-            using resultType = decltype(std::declval<otherType>() + std::declval<TYPE>());
-
-            std::array<resultType, SIZE> tmp_data_sum;
+            std::array<TYPE, SIZE> tmp_data_sum;
 
             for(int i = 0; i < SIZE; i++) {
                 tmp_data_sum[i] = m_data[i] + other.m_data[i];
             }
 
-            return VectorBase<resultType, SIZE>(tmp_data_sum);
+            return VectorBase<TYPE, SIZE>(tmp_data_sum);
         }
 
         VectorBase operator-(const VectorBase<TYPE, SIZE>& other) const {
-            static_assert(std::is_arithmetic_v<TYPE> == true);
 
             std::array<TYPE, SIZE> tmp_data_sub;
 
